@@ -1,0 +1,4 @@
+id;name;username;password
+1;superadmin;superadmin;$2a$10$hTMRWfJ0GhQmlm.zqheg/OT1pmshER/KfY9mZSouEpm3Dbf3yOKDG
+2;admin;admin;$2a$10$GokgAir5FC1c10lVAZDte.DoNDEtnThkssJC/eE197amQHm3bFWe2
+3;user;user;$2a$10$fe5436n9ulBKr7316NtvwObRb1wDodIljyzLWa6/EHepZ1QNNFRNy

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="codeex (generated)" id="1648034460631-1">
+        <createSequence sequenceName="balance_id_seq"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-2">
+        <createSequence sequenceName="deposits_id_seq"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-3">
+        <createSequence sequenceName="gym_price_info_id_seq"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-4">
+        <createSequence sequenceName="ip_liquidity_id_seq"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-5">
+        <createSequence sequenceName="ip_volume_id_seq"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-6">
+        <createSequence sequenceName="liquidity_mining_id_seq"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-7">
+        <createSequence sequenceName="pools_id_seq"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-8">
+        <createSequence sequenceName="referrals_id_seq"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-9">
+        <createSequence sequenceName="rewards_id_seq"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-10">
+        <createSequence sequenceName="roles_id_seq"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-11">
+        <createSequence sequenceName="users_id_seq"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-12">
+        <createSequence sequenceName="vaults_id_seq"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-13">
+        <createSequence sequenceName="wallets_id_seq"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-14">
+        <createSequence sequenceName="withdrawals_id_seq"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-15">
+        <createTable tableName="balance">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="balance_pkey"/>
+            </column>
+            <column name="amount" type="FLOAT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="wallet_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-16">
+        <createTable tableName="deposits">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="deposits_pkey"/>
+            </column>
+            <column name="apy" type="FLOAT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="amount" type="FLOAT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="coin" type="VARCHAR(255)"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="wallet_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-17">
+        <createTable tableName="gym_price_info">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="gym_price_info_pkey"/>
+            </column>
+            <column name="date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="high" type="FLOAT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="low" type="FLOAT8">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-18">
+        <createTable tableName="ip_liquidity">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="ip_liquidity_pkey"/>
+            </column>
+            <column name="amount" type="FLOAT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-19">
+        <createTable tableName="ip_volume">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="ip_volume_pkey"/>
+            </column>
+            <column name="amount" type="FLOAT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-20">
+        <createTable tableName="liquidity_mining">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="liquidity_mining_pkey"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="pair" type="VARCHAR(255)"/>
+            <column name="slug" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-21">
+        <createTable tableName="pools">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="pools_pkey"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="pair" type="VARCHAR(255)"/>
+            <column name="slug" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-22">
+        <createTable tableName="referrals">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="referrals_pkey"/>
+            </column>
+            <column name="rank" type="INT"/>
+            <column name="referral_id" type="BIGINT"/>
+            <column name="wallet_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-23">
+        <createTable tableName="rewards">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="rewards_pkey"/>
+            </column>
+            <column name="amount" type="FLOAT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type" type="FLOAT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="wallet_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-24">
+        <createTable tableName="roles">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints primaryKey="true" primaryKeyName="roles_pkey"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-25">
+        <createTable tableName="users">
+            <column autoIncrement="true" name="id" type="SERIAL">
+                <constraints primaryKey="true" primaryKeyName="users_pkey"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="username" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-26">
+        <createTable tableName="users_roles">
+            <column name="user_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-27">
+        <createTable tableName="vaults">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="vaults_pkey"/>
+            </column>
+            <column name="coin" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="slug" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-28">
+        <createTable tableName="wallets">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="wallets_pkey"/>
+            </column>
+            <column name="address" type="VARCHAR(255)"/>
+            <column name="is_verified" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="referral_address" type="VARCHAR(255)"/>
+            <column name="referral_id" type="BIGINT"/>
+            <column name="tg_username" type="VARCHAR(255)"/>
+            <column name="verification_date" type="TIMESTAMP(29) WITHOUT TIME ZONE"/>
+            <column name="verified_code" type="VARCHAR(255)"/>
+            <column name="withdrawals" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-29">
+        <createTable tableName="withdrawals">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="withdrawals_pkey"/>
+            </column>
+            <column name="amount" type="FLOAT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="coin" type="VARCHAR(255)"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="wallet_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-30">
+        <addPrimaryKey columnNames="user_id, role_id" constraintName="users_roles_pkey" tableName="users_roles"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-31">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="users_roles" constraintName="fk2o0jvgh89lemvvo17cbqvdxaa" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="users"/>
+    </changeSet>
+    <changeSet author="codeex (generated)" id="1648034460631-32">
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="users_roles" constraintName="fkj6m8fwv7oqv74fcehir1a9ffy" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="roles"/>
+    </changeSet>
+</databaseChangeLog>

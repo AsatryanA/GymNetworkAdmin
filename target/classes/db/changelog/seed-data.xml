@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+        http://www.liquibase.org/xml/ns/pro
+        http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+
+    <changeSet id="000000005" author="111">
+        <loadData
+                file="db/changelog/data.csv"
+                separator=";"
+                tableName="roles"
+                usePreparedStatements="true">
+            <column name="id" type="NUMERIC"/>
+            <column name="name" type="STRING"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="000000006" author="111">
+        <loadData
+                file="db/changelog/user.csv"
+                separator=";"
+                tableName="users"
+                usePreparedStatements="true">
+            <column name="id" type="NUMERIC"/>
+            <column name="name" type="STRING"/>
+            <column name="username" type="STRING"/>
+            <column name="password" type="STRING"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="000000007" author="111">
+        <loadData
+                file="db/changelog/user_roles.csv"
+                separator=";"
+                tableName="users_roles"
+                usePreparedStatements="true">
+            <column name="user_id" type="NUMERIC"/>
+            <column name="role_id" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="000000008" author="111">
+        <loadData
+                file="db/changelog/wallet.csv"
+                separator=";"
+                tableName="wallets"
+                usePreparedStatements="true">
+            <column name="id" type="NUMERIC"/>
+            <column name="address" type="STRING"/>
+            <column name="is_verified" type="BOOLEAN"/>
+            <column name="referral_address" type="STRING"/>
+            <column name="referral_id" type="NUMERIC"/>
+            <column name="tg_username" type="STRING"/>
+            <column name="verification_date" type="DATE"/>
+            <column name="verified_code" type="STRING"/>
+            <column name="withdrawals" type="BOOLEAN"/>
+
+        </loadData>
+    </changeSet>
+
+
+</databaseChangeLog>
